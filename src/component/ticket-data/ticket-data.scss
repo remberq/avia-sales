@@ -1,0 +1,24 @@
+.ticket-item__info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.ticket-item__text {
+  width: 120px;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 15px;
+  line-height: 21px;
+  color: #4a4a4a;
+}
+
+.text-gray {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #a0b0b9;
+}

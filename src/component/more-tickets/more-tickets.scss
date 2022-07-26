@@ -1,0 +1,25 @@
+.add-btn {
+  width: 502px;
+  height: 50px;
+  border: none;
+  background-color: #2196f3;
+  border-radius: 6px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  &:hover {
+    cursor: pointer;
+    color: #2196f3;
+    background-color: #ffffff;
+    font-weight: bold;
+  }
+}

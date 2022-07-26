@@ -1,0 +1,46 @@
+.ticket-form {
+  width: 232px;
+  height: 252px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #e1dede;
+
+  &--text {
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    color: #4a4a4a;
+  }
+}
+
+.ticket-form__container {
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  padding-left: 20px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+
+  align-items: center;
+
+  color: #4a4a4a;
+}
+
+input {
+  position: absolute;
+  margin-left: -20px;
+  border: green;
+}
