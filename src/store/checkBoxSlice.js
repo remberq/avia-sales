@@ -1,18 +1,31 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-export const getFetchTickets = createAsyncThunk('tickets/getFetchTickets', async function (_, { rejectWithValue }) {
-  try {
-    const tickets = await fetch(
-      'https://aviasales-test-api.kata.academy/tickets?searchId=5c1ea16612590b5a25943d7c2eb2f138'
-    )
-    if (!tickets.ok) {
-      throw new Error('Opps')
+export const getFetchTickets = createAsyncThunk('tickets/getFetchTickets', async function (_, { dispatch, getState }) {
+  for (let i = 0; i < 20; i++) {
+    try {
+      const { tickets } = getState()
+      const response = await fetch(`https://aviasales-test-api.kata.academy/tickets?searchId=${tickets.searchID}`)
+      if (!response.ok) {
+        throw new Error('Something going wrong')
+      }
+      const ticket = await response.json()
+      if (ticket.stop) {
+        break
+      }
+      dispatch(addTickets({ ticket }))
+    } catch (e) {
+      i -= 1
     }
-    const result = await tickets.json()
-    console.log(result)
-    return result.tickets
+  }
+})
+
+export const getSearchID = createAsyncThunk('tickets/getSearchID', async function () {
+  try {
+    const response = fetch('https://aviasales-test-api.kata.academy/search')
+    const ID = (await response).json()
+    return await ID
   } catch (e) {
-    return rejectWithValue(e.message)
+    console.log(e)
   }
 })
 
@@ -45,22 +58,33 @@ const ticketsSlice = createSlice({
   name: 'tickets',
   initialState: {
     tickets: [],
+    searchID: null,
     loadStatus: false,
     errors: false,
   },
-  reducers: {},
+  reducers: {
+    addTickets(state, action) {
+      const tickets = action.payload.ticket.tickets
+      state.tickets = [...state.tickets, ...tickets]
+    },
+  },
   extraReducers: {
     [getFetchTickets.pending]: (state) => {
-      state.loadStatus = true
+      if (!state.tickets.length) {
+        state.loadStatus = true
+      }
+      state.loadStatus = false
       state.errors = false
     },
-    [getFetchTickets.fulfilled]: (state, action) => {
+    [getFetchTickets.fulfilled]: (state) => {
       state.loadStatus = false
-      state.tickets = action.payload
     },
     [getFetchTickets.rejected]: (state, action) => {
       state.loadStatus = true
       state.errors = action.payload
+    },
+    [getSearchID.fulfilled]: (state, action) => {
+      state.searchID = action.payload['searchId']
     },
   },
 })

@@ -1,5 +1,6 @@
 .ticket-item__container {
-  width: 502px;
+  max-width: 502px;
+  width: 100%;
   height: 184px;
   border-radius: 6px;
   background-color: #ffffff;
@@ -34,4 +35,8 @@
   display: flex;
   flex-direction: column;
   margin-top: 18px;
+}
+
+@media (max-width: 650px) {
+
 }

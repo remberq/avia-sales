@@ -18,10 +18,9 @@ const TicketList = () => {
   const status = useSelector((state) => state.status.ticketStatus)
   const checkboxStatus = useSelector((state) => state.status.checkboxStatus)
   const [page, setPage] = useState(5)
-  console.log(checkboxStatus)
   if (load) {
     return (
-      <div>
+      <div className={'ticket-list-container'}>
         <TicketPriceFilter />
         <div className={'example'}>
           <Spin size={'large'} />
@@ -32,12 +31,10 @@ const TicketList = () => {
   }
   if (!checkboxStatus.length) {
     return (
-      <div>
+      <div className={'ticket-list-container'}>
         <TicketPriceFilter />
-        <div>
-          <img className={'no-filters--img'} src={gif} alt="travolta_gif" />
-          <p className={'no-filters--text'}>Рейсов, подходящих под заданные фильтры, не найдено</p>
-        </div>
+        <img className={'no-filters--img'} src={gif} alt="travolta_gif" />
+        <p className={'no-filters--text'}>Рейсов, подходящих под заданные фильтры, не найдено</p>
         <ShowMoreTickets />
       </div>
     )
@@ -53,7 +50,7 @@ const TicketList = () => {
   })
 
   return (
-    <div>
+    <div className={'ticket-list-container'}>
       <TicketPriceFilter />
       {getTicketsItems}
       <ShowMoreTickets addPage={() => setPage((page) => page + 5)} />

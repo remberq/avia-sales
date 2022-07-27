@@ -22,6 +22,12 @@
   }
 }
 
+@media (max-width: 720px) {
+  .ticket-form {
+    padding: 20px 5px 20px 20px;
+  }
+}
+
 .ticket-form__container {
   margin-bottom: 10px;
 }
@@ -43,4 +49,14 @@ input {
   position: absolute;
   margin-left: -20px;
   border: green;
+}
+
+@media (max-width: 450px) {
+  .ticket-form {
+    padding: 20px 5px 20px 10px;
+  }
+
+  label {
+    font-size: 10px;
+  }
 }

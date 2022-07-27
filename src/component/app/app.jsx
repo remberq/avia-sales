@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import TicketList from '../ticket-list/ticket-list'
 import TicketFilter from '../filter/filter'
-import { getFetchTickets } from '../../store/checkBoxSlice'
+import { getFetchTickets, getSearchID } from '../../store/checkBoxSlice'
 
 import logo from './Logo.png'
 
@@ -12,7 +12,7 @@ import './app.scss'
 const App = () => {
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getFetchTickets())
+    dispatch(getSearchID()).then(() => dispatch(getFetchTickets()))
   }, [dispatch])
 
   return (

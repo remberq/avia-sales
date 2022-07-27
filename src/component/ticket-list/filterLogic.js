@@ -26,10 +26,8 @@ export const filterStops = (checkbox, ticks) => {
   if (checkbox.length === 4) {
     return ticks
   }
-  const filteredTicks = ticks.filter((item) => {
+  return ticks.filter((item) => {
     const stopsCount = item.segments[0].stops.length
     return checkbox.includes(stopsCount)
   })
-  console.log(filteredTicks)
-  return filteredTicks
 }

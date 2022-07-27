@@ -1,13 +1,13 @@
 .no-filters--img {
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   margin: 0 auto;
   display: block;
 }
 
 .no-filters--text {
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 20px 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   border: 1px solid black;
@@ -26,4 +26,10 @@
   margin-left: 220px;
   margin-top: 150px;
   margin-bottom: 150px;
+}
+
+.ticket-list-container {
+  max-width: 502px;
+  width: 100%;
+  padding: 0 10px 10px;
 }

@@ -22,3 +22,12 @@
   text-transform: uppercase;
   color: #a0b0b9;
 }
+
+@media (max-width: 650px) {
+  .ticket-item__text {
+    width: 80px;
+    font-weight: 550;
+    font-size: 10px;
+    line-height: 15px;
+  }
+}

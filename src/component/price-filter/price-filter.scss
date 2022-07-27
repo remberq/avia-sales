@@ -1,5 +1,6 @@
 .ticket-filter {
-  width: 501px;
+  max-width: 501px;
+  width: 100%;
   height: 50px;
   margin-bottom: 18px;
   background-color: #ffffff;
@@ -7,7 +8,7 @@
 }
 
 .ticket-btn {
-  width: 167px;
+  width: 33.3%;
   height: 100%;
   border: none;
   border-top: solid 1px #dfe5ec;
@@ -50,5 +51,30 @@
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+@media (max-width: 650px) {
+  .ticket-btn {
+    height: 40px;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: 0.2px;
+  }
+  .ticket-filter {
+    height: 40px;
+  }
+}
+
+@media (max-width: 530px) {
+  .ticket-btn {
+    height: 30px;
+    font-size: 7px;
+    line-height: 10px;
+    letter-spacing: 0.1px;
+  }
+
+  .ticket-filter {
+    height: 30px;
   }
 }
