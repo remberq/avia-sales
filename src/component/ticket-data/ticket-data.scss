@@ -8,7 +8,7 @@
   width: 120px;
   font-style: normal;
   font-weight: 550;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 21px;
   color: #4a4a4a;
 }
@@ -16,7 +16,7 @@
 .text-gray {
   font-style: normal;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 18px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -25,9 +25,9 @@
 
 @media (max-width: 650px) {
   .ticket-item__text {
-    width: 80px;
+    width: 90px;
     font-weight: 550;
-    font-size: 10px;
+    font-size: 11px;
     line-height: 15px;
   }
 }

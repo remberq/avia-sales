@@ -16,11 +16,13 @@ const App = () => {
   }, [dispatch])
 
   return (
-    <div className="main">
-      <img className={'main__logo'} src={logo} alt="logo" />
-      <div className={'main__content'}>
-        <TicketFilter />
-        <TicketList />
+    <div className="wrapper">
+      <div className="main">
+        <img className={'main__logo'} src={logo} alt="logo" />
+        <div className={'main__content'}>
+          <TicketFilter />
+          <TicketList />
+        </div>
       </div>
     </div>
   )

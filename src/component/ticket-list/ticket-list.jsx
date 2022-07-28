@@ -35,7 +35,6 @@ const TicketList = () => {
         <TicketPriceFilter />
         <img className={'no-filters--img'} src={gif} alt="travolta_gif" />
         <p className={'no-filters--text'}>Рейсов, подходящих под заданные фильтры, не найдено</p>
-        <ShowMoreTickets />
       </div>
     )
   }
